@@ -1,0 +1,22 @@
+managed implementation in class zbp_6829892_crud_m unique;
+strict ( 2 );
+
+define behavior for Z6829892_CRUD_M alias Vendor
+persistent table z6829892_lfa1
+lock master
+authorization master ( instance )
+etag master last_changed_at
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update ) lifnr;
+
+  mapping for z6829892_lfa1{
+  lifnr = lifnr;
+  land1  = land1;
+  name1  = name1;
+  ort01  = ort01;
+  last_changed_at = last_changed_at;
+}
+}

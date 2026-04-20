@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINITION FOR EMAIL'
+define service Z026_EMAIL_DEF {
+  expose ZI_026_SERVICE_EMAIL;
+}

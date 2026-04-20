@@ -1,0 +1,5 @@
+@EndUserText.label: 'SINGLETON SERVICE DEFINITION'
+define service Z026_STON_DEF {
+  expose ZI_026_STON_HEADER as Header;
+  expose ZI_026_STON_CHILD  as Child;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def for RAP Read only'
+define service Z6829892_RAPREAD_DEF {
+  expose ZI_RAP_6829892 as PurchasingData;
+}

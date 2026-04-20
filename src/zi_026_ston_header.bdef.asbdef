@@ -1,0 +1,46 @@
+managed implementation in class zbp_I_026_STON_HEADER unique;
+strict ( 2 );
+with draft;
+
+define behavior for  ZI_026_STON_HEADER alias Singleton
+persistent table z026_header_ston
+draft table z026_hston_d
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+{
+  update;
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  association _Carrier { create; with draft; }
+
+  mapping for z026_header_ston {
+    SingletonID = singleton_id;
+    LastChangedAt = last_changed_at;
+  }
+}
+
+define behavior for ZI_026_STON_CHILD alias Carrier
+persistent table Z026_CHILD_STON
+draft table z026_cston_d
+lock dependent by _Singleton
+authorization dependent by _Singleton
+etag master LastChangedAt
+{
+  update;
+  delete;
+  field ( readonly : update ) AirlineID;
+  field ( readonly ) SingletonID;
+  association _Singleton { with draft; }
+
+  mapping for Z026_CHILD_STON {
+    SingletonID = singleton_id;
+    AirlineID = carrid;
+    AirlineName = carrname;
+    CurrencyCode = currency_code;
+    LastChangedAt = last_changed_at;
+  }
+}

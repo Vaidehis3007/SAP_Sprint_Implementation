@@ -1,0 +1,13 @@
+unmanaged implementation in class zbp_i_6829892_rapun unique;
+strict ( 2 );
+
+define behavior for ZI_6829892_RAPUN alias Vendor
+lock master
+authorization master ( instance )
+etag master last_changed_at
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly : update) lifnr;
+}

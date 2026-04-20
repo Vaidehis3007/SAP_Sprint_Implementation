@@ -1,0 +1,4 @@
+@EndUserText.label: 'RAP UNMANAGED SERVICE DEFINITION'
+define service Z6829892_RAPUN_DEF {
+  expose ZI_6829892_RAPUN;
+}

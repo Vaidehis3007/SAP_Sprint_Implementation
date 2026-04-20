@@ -1,0 +1,4 @@
+@EndUserText.label: 'RAP MANAGAED SERVICES'
+define service Z6829892_RAPM_DEF {
+  expose Z6829892_CRUD_M;
+}
